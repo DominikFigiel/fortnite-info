@@ -52,6 +52,29 @@
             @endif
             @endforeach
 
+            <h2>Oferta specjalna:</h1>
+                @foreach ($specialFeatured as $item)
+                @if (head($item['items'])['images']['featured'])
+                    <div class="card col-md-2">
+                        <img class="card-img-top bg-secondary" src="{{ head($item['items'])['images']['featured'] }}" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ head($item['items'])['name'] }}</h5>
+                        <p class="card-text">{{ head($item['items'])['description'] }}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Zwykła cena: {{ $item['regularPrice'] }}</li>
+                        <li class="list-group-item">Aktualna cena: {{ $item['finalPrice'] }}</li>
+                        <li class="list-group-item">Rzadkość: {{ head($item['items'])['rarity']['displayValue'] }}</li>
+                        <li class="list-group-item">Ostatnio w sklepie: {{ last($item['items'][0]['shopHistory']) }}</li>
+                        </ul>
+                        <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                @endif
+                @endforeach
+
         </div>
     </div>
 </div>

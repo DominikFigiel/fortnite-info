@@ -52,7 +52,7 @@ class Shop extends Model
 
     public function getSpecialFeatured()
     {
-        $featured = Http::get('https://fortnite-api.com/v2/shop/br?language=pl')->json()['data']['featured']['entries'];
+        $featured = Http::get('https://fortnite-api.com/v2/shop/br?language=pl')->json()['data']['specialFeatured']['entries'];
 
         $featuredCollection = collect($featured);
 
