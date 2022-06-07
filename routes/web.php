@@ -20,6 +20,6 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/fortnite-api', 'App\Http\Controllers\FortniteApi\ShopController@index');
+Route::get('/api', [App\Http\Controllers\FortniteApi\ShopController::class, 'index']);
 
 Auth::routes();

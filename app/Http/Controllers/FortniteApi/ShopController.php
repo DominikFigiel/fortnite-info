@@ -18,8 +18,10 @@ class ShopController extends Controller
     public function index(): View
     {
         $featured = $this->shop->featured;
+        $daily = $this->shop->daily;
+        $specialFeatured = $this->shop->specialFeatured;
 
-        return view('fortnite_api.index', compact('featured'));
+        return view('fortnite_api.index', compact('featured', 'daily', 'specialFeatured'));
     }
 
 }
