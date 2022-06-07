@@ -36,16 +36,18 @@ class Shop extends Model
 
     public function getDaily()
     {
-        $featured = Http::get('https://fortnite-api.com/v2/shop/br?language=pl')->json()['data']['daily']['entries'];
+        $daily = Http::get('https://fortnite-api.com/v2/shop/br?language=pl')->json()['data']['daily']['entries'];
 
-        $featuredCollection = collect($featured);
+        $dailyCollection = collect($daily);
 
-        $featuredItems = $featuredCollection->map(function ($featuredCollection) {
-            return collect($featuredCollection)
+        // dd($dailyCollection);
+
+        $dailyItems = $dailyCollection->map(function ($dailyCollection) {
+            return collect($dailyCollection)
                 ->only(['regularPrice', 'finalPrice', 'bundle', 'banner', 'items']);
         });
 
-        return $featuredItems;
+        return $dailyItems;
     }
 
     public function getSpecialFeatured()
