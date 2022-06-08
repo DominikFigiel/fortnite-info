@@ -14,6 +14,7 @@
                     <div class="card-body">
                     <h5 class="card-title">{{ head($item['items'])['name'] }}</h5>
                     <p class="card-text">{{ head($item['items'])['description'] }}</p>
+                    <p class="card-text">{{ head($item['items'])['set']['value'] }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item">Zwykła cena: {{ $item['regularPrice'] }}</li>
@@ -42,7 +43,6 @@
                     <li class="list-group-item">Zwykła cena: {{ $item['regularPrice'] }}</li>
                     <li class="list-group-item">Aktualna cena: {{ $item['finalPrice'] }}</li>
                     <li class="list-group-item">Rzadkość: {{ head($item['items'])['rarity']['displayValue'] }}</li>
-                    <li class="list-group-item">Ostatnio w sklepie: {{ last($item['items'][0]['shopHistory']) }}</li>
                     </ul>
                     <div class="card-body">
                     <a href="#" class="card-link">Card link</a>
@@ -65,7 +65,6 @@
                         <li class="list-group-item">Zwykła cena: {{ $item['regularPrice'] }}</li>
                         <li class="list-group-item">Aktualna cena: {{ $item['finalPrice'] }}</li>
                         <li class="list-group-item">Rzadkość: {{ head($item['items'])['rarity']['displayValue'] }}</li>
-                        <li class="list-group-item">Ostatnio w sklepie: {{ last($item['items'][0]['shopHistory']) }}</li>
                         </ul>
                         <div class="card-body">
                         <a href="#" class="card-link">Card link</a>
