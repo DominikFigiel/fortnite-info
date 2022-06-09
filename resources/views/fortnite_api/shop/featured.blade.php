@@ -14,7 +14,11 @@
                     <div class="card-body">
                     <h5 class="card-title">{{ head($item['items'])['name'] }}</h5>
                     <p class="card-text">{{ head($item['items'])['description'] }}</p>
-                    <p class="card-text">{{ head($item['items'])['set']['value'] }}</p>
+
+                    @if (!empty(head($item['items'])['set']['value']))
+                        <p class="card-text">{{ head($item['items'])['set']['value'] }}</p>
+                    @endif
+
                     </div>
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item">Zwykła cena: {{ $item['regularPrice'] }}</li>
